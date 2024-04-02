@@ -21,17 +21,21 @@ class Funcionario {
 	private String nome;
 	private String cpf;
 	private String rg;
-	private int idade;
+	private int idade = 0;
 	private String departamento;
 	private String cargo;
-	private double salario;
-	private DataAdmissao dataAdmissão;
+	private double salario = 0;
+	private DataAdmissao dataAdmissao;
+	
 
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
 	public String getNome() {
+		if(this.nome == null) {
+			return "Nome não foi definido";
+		}
 		return this.nome;
 	}
 
@@ -40,6 +44,9 @@ class Funcionario {
 	}
 
 	public String getCpf() {
+		if(this.cpf == null) {
+			return "CPF não foi definido";
+		}
 		return this.cpf;
 	}
 
@@ -48,15 +55,21 @@ class Funcionario {
 	}
 
 	public String getRg() {
+		if(this.rg == null) {
+			return "RG não foi definido";
+		}
 		return this.rg;
 	}
 
-	public void setIdade(int idade) {
+	public void setIdade(Integer idade) {
 		this.idade = idade;
 	}
 
-	public int getIdade() {
-		return this.idade;
+	public String getIdade() {
+		if (this.idade == 0) {
+	        return "Idade não foi definida";
+	    }
+	    return Integer.toString(this.idade);
 	}
 
 	public void setDepartamento(String departamento) {
@@ -64,6 +77,9 @@ class Funcionario {
 	}
 
 	public String getDepartamento() {
+		if (this.departamento == null) {
+	        return "Departamento não foi definido";
+	    }
 		return this.departamento;
 	}
 
@@ -72,6 +88,9 @@ class Funcionario {
 	}
 
 	public String getCargo() {
+		if (this.cargo == null) {
+	        return "Cargo não foi definido";
+	    }
 		return this.cargo;
 	}
 
@@ -79,9 +98,26 @@ class Funcionario {
 		this.salario = salario;
 	}
 
-	public double getSalario() {
-		return this.salario;
+	public String getSalario() {
+		 if (this.salario ==  0) {
+		        return "O salário não foi definido";
+		    }
+		    return Double.toString(this.salario);
 	}
+	
+	public void setDataAdmissao(int dia, int mes, int ano) {
+        if (this.dataAdmissao == null) {
+            this.dataAdmissao = new DataAdmissao();
+        }
+        this.dataAdmissao.setDataAdmissao(dia, mes, ano);
+    }
+
+    public String getDataAdmissaoFormatada() {
+        if (this.dataAdmissao == null) {
+            return "Data de admissão não definida";
+        }
+        return this.dataAdmissao.getDataFormatada();
+    }
 
 	public void recebeAumento(double aumento) {
 		this.salario += aumento;
@@ -91,19 +127,20 @@ class Funcionario {
 		return this.salario * 12;
 
 	}
+	
 
 	public void mostra() {
 		System.out.println("#########################");
 		System.out.println();
-		System.out.println("Informações do funcionario: " + this.nome);
+		System.out.println("Informações do funcionario: " + this.getNome());
 		System.out.println("-------------------------");
-		System.out.println("CPF: " + this.cpf);
-		System.out.println("RG: " + this.rg);
-		System.out.println("Idade: " + this.idade);
-		System.out.println("Departamento: " + this.departamento);
-		System.out.println("Cargo: " + this.cargo);
-		System.out.println("Data da admissão: " + this.dataAdmissão.getDataFormatada());
-		System.out.println("Salário: " + this.salario);
+		System.out.println("CPF: " + this.getCpf());
+		System.out.println("RG: " + this.getRg());
+		System.out.println("Idade: " + this.getIdade());
+		System.out.println("Departamento: " + this.getDepartamento());
+		System.out.println("Cargo: " + this.getCargo());
+		System.out.println("Data da admissão: " + this.getDataAdmissaoFormatada());
+		System.out.println("Salário: " + this.getSalario());
 		System.out.println("Ganhos anuais: " + this.calculaGanhoAnual());
 		System.out.println();
 
