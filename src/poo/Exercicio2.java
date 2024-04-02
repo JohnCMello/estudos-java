@@ -1,6 +1,6 @@
 package poo;
 
-class Funcionario2 {
+class FuncionarioEx2 {
 
 	String nome;
 	String cpf;
@@ -24,7 +24,7 @@ class Funcionario2 {
 public class Exercicio2 {
 
 	public static void main(String[] args) {
-		Funcionario2 funcionario1 = new Funcionario2();
+		FuncionarioEx2 funcionario1 = new FuncionarioEx2();
 
 		funcionario1.nome = "John Mello";
 		funcionario1.cpf = "123.321.123-12";
