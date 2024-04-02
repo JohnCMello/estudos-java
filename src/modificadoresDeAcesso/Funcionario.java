@@ -1,6 +1,5 @@
 package modificadoresDeAcesso;
 
-
 class DataAdmissao {
 	private int dia;
 	private int mes;
@@ -25,8 +24,64 @@ class Funcionario {
 	private int idade;
 	private String departamento;
 	private String cargo;
-	private DataAdmissao dataAdmissão;
 	private double salario;
+	private DataAdmissao dataAdmissão;
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getNome() {
+		return this.nome;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getCpf() {
+		return this.cpf;
+	}
+
+	public void setRg(String rg) {
+		this.rg = rg;
+	}
+
+	public String getRg() {
+		return this.rg;
+	}
+
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+
+	public int getIdade() {
+		return this.idade;
+	}
+
+	public void setDepartamento(String departamento) {
+		this.departamento = departamento;
+	}
+
+	public String getDepartamento() {
+		return this.departamento;
+	}
+
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
+	}
+
+	public String getCargo() {
+		return this.cargo;
+	}
+
+	public void setSalario(double salario) {
+		this.salario = salario;
+	}
+
+	public double getSalario() {
+		return this.salario;
+	}
 
 	public void recebeAumento(double aumento) {
 		this.salario += aumento;
@@ -54,7 +109,3 @@ class Funcionario {
 
 	}
 }
-
-
-
-
