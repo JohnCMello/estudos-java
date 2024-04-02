@@ -1,4 +1,4 @@
-package estudosAlura;
+package variaveisFluxo;
 
 public class SequenceX {
 

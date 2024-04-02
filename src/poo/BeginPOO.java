@@ -1,4 +1,4 @@
-package estudosAlura;
+package poo;
 
 class Pessoa {
 	String nome;
@@ -47,7 +47,6 @@ public class BeginPOO {
 		john.titular.nascimento = "28-12-1986";
 		
 		
-
 //		john.saldo += 100.0;
 		john.deposita(100.0);
 		john.saca(50.0);
