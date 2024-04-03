@@ -7,10 +7,6 @@ class Conta {
 	private double limite;
 	private static int numeroIncremental = 1;
 
-	public static int getNumeroIncremental() {
-		return numeroIncremental;
-	}
-
 	public Conta() {
 		this.numero = numeroIncremental;
 		numeroIncremental++;
@@ -28,6 +24,10 @@ class Conta {
 		this.limite = limite;
 		this.saldo = saldoInicial;
 
+	}
+
+	public static int getNumeroIncremental() {
+		return numeroIncremental;
 	}
 
 	public void saca(double valor) {

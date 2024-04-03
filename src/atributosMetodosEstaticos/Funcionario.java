@@ -49,13 +49,17 @@ class Funcionario {
 	private String cargo;
 	private double salario = 0;
 	private DataAdmissao dataAdmissao;
-
-	public Funcionario() {
-
-	}
+	private int idFuncionario;
+	private static int identificador = 0;
 
 	public Funcionario(String nome) {
 		this.nome = nome;
+		this.idFuncionario = ++identificador;
+
+	}
+
+	public int getIdFuncionario() {
+		return this.idFuncionario;
 	}
 
 	public void setNome(String nome) {
