@@ -39,6 +39,11 @@ class Empresa {
 	private int posicaoFuncionario = 0;
 	private int posicaoFilial = 0;
 
+	public Empresa(int numeroFuncionarios) {
+		this.funcionarios = new Funcionario[numeroFuncionarios];
+
+	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
@@ -74,20 +79,19 @@ class Empresa {
 		return this.funcionarios;
 
 	}
-	
-	public Funcionario getFuncionario(int posicao) {
-	    if (this.funcionarios == null || posicao < 0 || posicao >= this.posicaoFuncionario) {
-	        return null; 
-	    }
-	    return this.funcionarios[posicao];
-	}
 
+	public Funcionario getFuncionario(int posicao) {
+		if (this.funcionarios == null || posicao < 0 || posicao >= this.posicaoFuncionario) {
+			return null;
+		}
+		return this.funcionarios[posicao];
+	}
 
 	public void setFilial(Filial filial) {
 		this.filiais[this.posicaoFilial] = filial;
 		this.posicaoFilial++;
 	}
-	
+
 	public Filial[] getFiliais(Filial filial) {
 		if (this.filiais == null) {
 			return new Filial[0];
@@ -95,11 +99,11 @@ class Empresa {
 		return this.filiais;
 	}
 
-	public Filial getFilialo(int posicao) {
-	    if (this.filiais == null || posicao < 0 || posicao >= this.posicaoFilial) {
-	        return null; 
-	    }
-	    return this.filiais[posicao];
+	public Filial getFilial(int posicao) {
+		if (this.filiais == null || posicao < 0 || posicao >= this.posicaoFilial) {
+			return null;
+		}
+		return this.filiais[posicao];
 	}
 
 	void mostraFuncionarios() {
