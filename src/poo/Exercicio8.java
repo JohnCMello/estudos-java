@@ -53,8 +53,8 @@ class FuncionarioEx8 {
 public class Exercicio8 {
 
 	public static void main(String[] args) {
-		FuncionarioEx8.salario = 3000.00;
-		FuncionarioEx8.calculaGanhoAnual();
+//		FuncionarioEx8.salario = 3000.00;
+//		FuncionarioEx8.calculaGanhoAnual();
 
 	}
 
