@@ -6,6 +6,11 @@ class DataAdmissao {
 	private int ano;
 
 	public void setDataAdmissao(int dia, int mes, int ano) {
+		if (mes < 1 || mes > 12 || dia < 1 || dia > diasNoMes(mes, ano)) {
+			System.out.println("Data de admissão inválida.");
+			return;
+		}
+
 		this.dia = dia;
 		this.mes = mes;
 		this.ano = ano;
@@ -13,6 +18,24 @@ class DataAdmissao {
 
 	public String getDataFormatada() {
 		return "" + this.dia + '/' + this.mes + '/' + this.ano;
+	}
+
+	private int diasNoMes(int mes, int ano) {
+		switch (mes) {
+		case 2:
+			if (ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0)) {
+				return 29; // Fevereiro em ano bissexto
+			} else {
+				return 28; // Fevereiro em ano não bissexto
+			}
+		case 4:
+		case 6:
+		case 9:
+		case 11:
+			return 30;
+		default:
+			return 31;
+		}
 	}
 }
 
